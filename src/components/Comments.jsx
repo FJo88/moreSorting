@@ -14,40 +14,46 @@ const Comments = () => {
       });
   }, []);
 
-  if( comments && desc){
-    comments.sort((a, b) => b.postId - a.postId)
-  }
-  else if (comments){
-    comments.sort((a, b) => a.postId - b.postId)
+  if (comments && desc) {
+    comments.sort((a, b) => b.postId - a.postId);
+  } else if (comments) {
+    comments.sort((a, b) => a.postId - b.postId);
   }
 
   return (
-    <div>
-      <table>
-        <tr>
-          <th>Id</th>
-          <th>
-            UserId
-            {desc ? <FaChevronDown onClick={() => setDesc(!desc)}/> : <FaChevronUp onClick={() => setDesc(!desc)}/>} 
-          </th>
-          <th>Comment Title</th>
-          <th>Email</th>
-        </tr>
-{/* .sort((a, b) => b.postId - a.postId) */}
-        {comments
-          ? comments.map((comment, i) => {
+    <>
+      
+      <div>
+        <table>
+          <tr>
+            <th>Id</th>
+            <th>
+              UserId
+              {desc ? (
+                <FaChevronDown onClick={() => setDesc(!desc)} />
+              ) : (
+                <FaChevronUp onClick={() => setDesc(!desc)} />
+              )}
+            </th>
+            <th>Comment Title</th>
+            <th>Email</th>
+          </tr>
+          {/* .sort((a, b) => b.postId - a.postId) */}
+          {comments
+            ? comments.map((comment, i) => {
                 return (
                   <tr key={i}>
                     <td>{comment.id}</td>
                     <td>{comment.postId}</td>
-                    <td>{comment.name}</td>
+                    <td style={{fontWeight: "600"}}>{comment.name.toUpperCase()}</td>
                     <td>{comment.email}</td>
                   </tr>
                 );
               })
-          :  null}
-      </table>
-    </div>
+            : null}
+        </table>
+      </div>
+    </>
   );
 };
 

@@ -4,6 +4,7 @@ import Posts from "./components/Posts";
 import Comments from "./components/Comments";
 import Todos from "./components/Todos";
 import Users from "./components/Users";
+import { FaStar } from "react-icons/fa";
 
 function App() {
   const [posts, setPosts] = useState(false);
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Sorting Practise</h1>
+        <h1>Sorting Exersice</h1>
       </header>
       <div className="container">
         <div className="sidebar">
@@ -61,6 +62,7 @@ function App() {
         </div>
 
         <div className="content">
+        <h1 className="greeting">Välkommen Filip <FaStar style={{color: "yellow"}}/></h1>
           {posts ? <Posts /> : null}
           {comments ? <Comments /> : null}
           {todos ? <Todos /> : null}

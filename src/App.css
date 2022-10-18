@@ -45,6 +45,14 @@ header {
   width: 80%;
   height: fit-content;
 }
+.greeting{
+  margin-top: 0px;
+  padding: 10px;
+  font-size: 3rem;
+  background: linear-gradient(white, green);
+  text-align: center;
+  color: rgb(14, 26, 122);
+}
 /*Post*/
 
 .post-grid {
@@ -83,6 +91,7 @@ header {
 
 /*Comment*/
 
+
 .comment-table {
   width: 100%;
   border-collapse: collapse;
@@ -95,7 +104,7 @@ table {
 th {
   background: linear-gradient(rgb(226, 226, 223), rgb(34, 226, 220));
   font-size: 2rem;
-  color: rgb(224, 33, 16);
+  color: rgb(93, 20, 14);
   text-align: center;
   border: solid black 1px;
 }
@@ -139,4 +148,41 @@ tr:nth-child(7n) td:nth-child(3n) {
   font-weight: 800;
   font-family: cursive;
   color: rgba(66, 64, 64, 0.867);
+}
+
+/*User*/
+
+.user-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3em;
+  row-gap: 3em;
+  margin: 100px;
+}
+.user-card{
+  background: linear-gradient(rgb(108, 110, 108), rgb(245, 242, 242));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  width: 500px;
+  height: 300px;
+  border: solid rgb(11, 11, 43) 2px;
+  box-shadow: 10px 10px 10px 10px rgb(145, 187, 236);
+}
+.user-card img{
+  margin-left: 30px;
+  opacity: 90%;
+  width: 150px;
+  height: 200px;
+  border-radius: 20px;
+}
+.user-cardleft{
+  padding: 10px;
+  width: 40%;
+
+}
+.user-cardright{
+  padding: 10px;
+  width: 60%;
 }
