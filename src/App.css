@@ -2,37 +2,141 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: rgb(243, 239, 235);
+  margin: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(166, 230, 230);
+  color: rgb(67, 101, 215);
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
+  height: 100%;
+}
+.sidebar {
+  position: absolute;
+  top: 100px;
+  width: 20%;
+  background-color: rgb(12, 117, 140);
+  height: 100%;
+  overflow: auto;
+}
+.sidebar h1 {
+  color: white;
+  margin: 10%;
+  padding-top: 20px;
+}
+.sidebar h1:hover {
+  color: rgb(85, 225, 29);
+  box-shadow: 2px 3px 2px 3px rgba(228, 18, 81, 0.5);
+  padding-bottom: 10px;
+}
+.content {
+  text-align: start;
+  position: absolute;
+  left: 20%;
+  top: 100px;
+  width: 80%;
+  height: fit-content;
+}
+/*Post*/
+
+.post-grid {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+.post-header {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-evenly;
+  color: white;
+  background: linear-gradient(rgb(24, 130, 175), orange);
+  font-size: 20px;
+}
+.post-header input {
+  height: 30px;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 15px;
+  color: rgb(17, 7, 64);
+  font-weight: 800;
+}
+.post-card {
+  text-align: center;
+  margin: 20px;
+  padding: 5px;
+  border: solid rgb(25, 25, 26) 2px;
+  border-radius: 40px;
+  background: linear-gradient(rgb(59, 56, 56), rgb(44, 236, 44));
+  color: white;
+  box-shadow: 3px 6px 3px 6px rgba(13, 24, 180, 0.5);
+}
+.post-card h3 {
+  color: rgb(19, 29, 218);
+}
+
+/*Comment*/
+
+.comment-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: solid black 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  background: linear-gradient(rgb(226, 226, 223), rgb(34, 226, 220));
+  font-size: 2rem;
+  color: rgb(224, 33, 16);
+  text-align: center;
+  border: solid black 1px;
+}
+th:nth-child(3n) {
+  background: linear-gradient(black, grey) !important;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+th:nth-child(2n + 2) {
+  display: flex;
+  justify-content: space-evenly;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+table tr,
+td {
+  text-align: center;
+  padding: 10px;
+  border: solid black 1px;
+}
+tr:nth-child(even) {
+  background-color: #dddd;
+}
+tr:nth-child(4n + 1) {
+  background-color: rgb(77, 209, 232);
+}
+td:nth-child(3n-1) {
+  background-color: rgb(74, 70, 70);
+  font-size: 1.5rem;
+  color: rgb(63, 236, 11);
+}
+td:nth-child(1n + 3) {
+  font-size: 1.2rem;
+  color: blue;
+}
+td:last-child {
+  font-weight: 900;
+  color: red;
+}
+tr:nth-child(3n) td:nth-child(4n) {
+  color: rgb(25, 72, 56);
+}
+tr:nth-child(7n) td:nth-child(3n) {
+  font-weight: 800;
+  font-family: cursive;
+  color: rgba(66, 64, 64, 0.867);
 }
