@@ -2,14 +2,12 @@ import { useState } from "react";
 import "./App.css";
 import Posts from "./components/Posts";
 import Comments from "./components/Comments";
-import Todos from "./components/Todos";
 import Users from "./components/Users";
 import { FaStar } from "react-icons/fa";
 
 function App() {
   const [posts, setPosts] = useState(false);
   const [comments, setComments] = useState(false);
-  const [todos, setTodos] = useState(false);
   const [users, setUsers] = useState(false);
 
   return (
@@ -23,7 +21,6 @@ function App() {
             onClick={() => {
               setPosts(!posts);
               setComments(false);
-              setTodos(false);
               setUsers(false);
             }}
           >
@@ -33,27 +30,16 @@ function App() {
             onClick={() => {
               setComments(!comments);
               setPosts(false);
-              setTodos(false);
               setUsers(false);
             }}
           >
             Comments
           </h1>
+
           <h1
             onClick={() => {
               setPosts(false);
               setComments(false);
-              setTodos(!todos);
-              setUsers(false);
-            }}
-          >
-            Todos
-          </h1>
-          <h1
-            onClick={() => {
-              setPosts(false);
-              setComments(false);
-              setTodos(false);
               setUsers(!users);
             }}
           >
@@ -62,10 +48,11 @@ function App() {
         </div>
 
         <div className="content">
-        <h1 className="greeting">Välkommen Filip <FaStar style={{color: "yellow"}}/></h1>
+          <h1 className="greeting">
+            Välkommen Filip <FaStar style={{ color: "yellow" }} />
+          </h1>
           {posts ? <Posts /> : null}
           {comments ? <Comments /> : null}
-          {todos ? <Todos /> : null}
           {users ? <Users /> : null}
         </div>
       </div>

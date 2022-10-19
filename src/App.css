@@ -47,6 +47,7 @@ header {
 }
 .greeting{
   margin-top: 0px;
+  margin-bottom: 0px;
   padding: 10px;
   font-size: 3rem;
   background: linear-gradient(white, green);
@@ -152,7 +153,26 @@ tr:nth-child(7n) td:nth-child(3n) {
 
 /*User*/
 
+.users-header{
+  padding: 0%;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(rgb(21, 224, 180),rgb(48, 24, 24));
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.users-header input{
+  font-size: 1.5rem;
+  font-weight: 600;
+  height: 40px;
+  width: 400px;
+  text-align: center;
+  border-radius: 20px;
+}
 .user-grid{
+  padding-top: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 3em;
